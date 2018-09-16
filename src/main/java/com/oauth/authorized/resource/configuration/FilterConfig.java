@@ -10,6 +10,12 @@ import org.springframework.web.filter.ShallowEtagHeaderFilter;
 
 import java.util.Properties;
 
+/**
+ * CORS configuration.
+ *
+ * @author Michał Kaliszewski (hititfr0mthe6ack@gmail.com)
+ *
+ */
 @Configuration
 @Slf4j
 public class FilterConfig {

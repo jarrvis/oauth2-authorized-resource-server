@@ -9,6 +9,12 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
+/**
+ * Resource server configuration.
+ *
+ * @author Michał Kaliszewski (hititfr0mthe6ack@gmail.com)
+ *
+ */
 @Configuration
 @EnableResourceServer
 @EnableMongoAuditing

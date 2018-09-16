@@ -1,5 +1,8 @@
 package com.oauth.authorized.resource.configuration.security;
 
+import com.oauth.authorized.resource.configuration.ApplicationConfigurationProperties;
+import com.oauth.authorized.resource.security.AccountAuthenticationProvider;
+import com.oauth.authorized.resource.security.CustomUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -8,10 +11,14 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
-import pl.easyparking.configuration.ApplicationConfigurationProperties;
-import pl.easyparking.security.AccountAuthenticationProvider;
-import pl.easyparking.security.CustomUserDetailsService;
 
+
+/**
+ * Spring security configuration.
+ *
+ * @author Michał Kaliszewski (hititfr0mthe6ack@gmail.com)
+ *
+ */
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled=true)

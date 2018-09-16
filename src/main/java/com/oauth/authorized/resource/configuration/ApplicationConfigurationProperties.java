@@ -4,6 +4,12 @@ package com.oauth.authorized.resource.configuration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+/**
+ * Custom application properties.
+ *
+ * @author Michał Kaliszewski (hititfr0mthe6ack@gmail.com)
+ *
+ */
 @Component
 @ConfigurationProperties(prefix="appconfig")
 public class ApplicationConfigurationProperties {
