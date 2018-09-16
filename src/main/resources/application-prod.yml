@@ -1,0 +1,13 @@
+# ===============================
+# = SPRING DATA
+# ===============================
+spring:
+  data:
+    mongodb:
+      uri: mongodb://user:pass@{mlab_db}.mlab.com:37192/oauth2-authirized-resource-server
+
+mongo:
+  min-connections: 2
+  max-connections: 5
+  connect-timeout-ms: 5000
+  socket-timeout-ms: 5000

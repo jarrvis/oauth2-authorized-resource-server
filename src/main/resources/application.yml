@@ -1,0 +1,91 @@
+##########################################
+# General
+##########################################
+info:
+    build:
+        name: oauth2-authirized-resource-server
+        description: provides oauth2 authorization for resources and basic user crud operations
+        artifact: oauth2-authirized-resource-server
+        version: dev
+
+##########################################
+# Logging
+##########################################
+logging:
+    path: ${log.root:.}
+    file: ${log.root:.}/oauth2_authirized_resource_server.log
+
+    level:
+      pl.easyparking: DEBUG
+      org.springframework:
+        security: DEBUG
+      data:
+        mongodb: DEBUG
+        document.mongodb: DEBUG
+
+##########################################
+# Spring Boot and related properties
+##########################################
+spring:
+    profiles:
+        include: ${ENV:dev}
+    jackson:
+      serialization:
+        write-dates-as-timestamps: false
+
+
+
+##########################################
+# API configuration
+##########################################
+api:
+    allowed-locales:
+        - en_GB
+
+    session_lifetime: 60    # minutes
+
+    delete_security_token: false
+
+##########################################
+# API Key security configuration
+##########################################
+    security:
+        delete_security_token: false
+        backend_admin_username: admin
+        backend_admin_password: test
+        apikey_header_name: "apikey"
+        authenticated_apikeys:
+            - name : "Localhost_dev"
+              apikey: "1234"
+              purpose: "Localhost dev"
+
+
+##########################################
+# API CORS configuration
+##########################################
+    cors:
+        allowed-origins:
+            - "*"
+        allowed-methods:
+            - GET
+            - POST
+            - PUT
+            - OPTIONS
+            - DELETE
+        allowed_headers:
+            - "*"
+        #        exposed_headers:
+        max-age: 1800
+
+##########################################
+# API authorization server configuration
+##########################################
+appconfig:
+  clientSecret: secret
+  clientId: client
+  signingKey: s1f41234pwqdqkl4l12ghg9853123sd
+
+##########################################
+# API user roles & permissions
+##########################################
+  defaultUserRoles: CUSTOMER
